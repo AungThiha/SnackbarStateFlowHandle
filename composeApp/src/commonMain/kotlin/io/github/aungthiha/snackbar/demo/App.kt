@@ -68,7 +68,7 @@ fun AppScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             val greeting = remember { Greeting().greet() }
-            Text("SnackbarChannel: $greeting")
+            Text("hello_from_SnackbarStateFlowHandle: $greeting")
 
             Spacer(modifier = Modifier.height(16.dp))
 

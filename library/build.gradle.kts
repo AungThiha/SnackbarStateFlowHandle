@@ -26,7 +26,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "SnackbarChannel"
+            baseName = "SnackbarStateFlowHandle"
             isStatic = true
         }
     }
@@ -35,12 +35,12 @@ kotlin {
 
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
-        outputModuleName = "snackbarChannel"
+        outputModuleName = "SnackbarStateFlowHandle"
         browser {
             val rootDirPath = project.rootDir.path
             val projectDirPath = project.projectDir.path
             commonWebpackConfig {
-                outputFileName = "snackbarChannel.js"
+                outputFileName = "snackbarStateFlowHandle.js"
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
                     static = (static ?: mutableListOf()).apply {
                         // Serve sources to debug inside browser
@@ -102,7 +102,7 @@ mavenPublishing {
     )
 
     pom {
-        name.set("SnackbarChannel")
+        name.set("SnackbarStateFlowHandle")
         description.set("A lifecycle-aware Snackbar library that eliminates boilerplate and prevents missed/duplicated snackbars in KMP/CMP.")
         url.set("https://github.com/AungThiha/SnackbarStateFlowHandle")
 

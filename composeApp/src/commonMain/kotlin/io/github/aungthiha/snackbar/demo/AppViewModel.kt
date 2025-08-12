@@ -3,7 +3,7 @@ package io.github.aungthiha.snackbar.demo
 import androidx.compose.material3.SnackbarDuration
 import androidx.lifecycle.ViewModel
 import demo.composeapp.generated.resources.Res
-import demo.composeapp.generated.resources.hello_from_SnackbarChannel
+import demo.composeapp.generated.resources.hello_from_SnackbarStateFlowHandle
 import demo.composeapp.generated.resources.ok
 import io.github.aungthiha.snackbar.SnackbarStateFlowHandle
 import io.github.aungthiha.snackbar.SnackbarStateFlowOwner
@@ -23,7 +23,7 @@ class AppViewModel(
 
     fun snackbarWithStringResource() {
         snackbarStateFlowHandle.showSnackBar(
-            message = Res.string.hello_from_SnackbarChannel
+            message = Res.string.hello_from_SnackbarStateFlowHandle
         )
     }
 
@@ -42,21 +42,21 @@ class AppViewModel(
 
     fun snackbarWithAction() {
         snackbarStateFlowHandle.showSnackBar(
-            message = Res.string.hello_from_SnackbarChannel,
+            message = Res.string.hello_from_SnackbarStateFlowHandle,
             actionLabel = Res.string.ok
         )
     }
 
     fun snackbarWithDismissAction() {
         snackbarStateFlowHandle.showSnackBar(
-            message = Res.string.hello_from_SnackbarChannel,
+            message = Res.string.hello_from_SnackbarStateFlowHandle,
             withDismissAction = true
         )
     }
 
     fun snackbarWithOnActionPerformCallback() {
         snackbarStateFlowHandle.showSnackBar(
-            message = Res.string.hello_from_SnackbarChannel,
+            message = Res.string.hello_from_SnackbarStateFlowHandle,
             actionLabel = Res.string.ok,
             onActionPerform = {
                 mutableOnActionPerformCalled.update { it + 1 }
@@ -66,7 +66,7 @@ class AppViewModel(
 
     fun snackbarWithOnDismissCallback() {
         snackbarStateFlowHandle.showSnackBar(
-            message = Res.string.hello_from_SnackbarChannel,
+            message = Res.string.hello_from_SnackbarStateFlowHandle,
             onDismiss = {
                 mutableOnDismissedCalled.update { it + 1 }
             }
@@ -75,7 +75,7 @@ class AppViewModel(
 
     fun indefiniteSnackbar() {
         snackbarStateFlowHandle.showSnackBar(
-            message = Res.string.hello_from_SnackbarChannel,
+            message = Res.string.hello_from_SnackbarStateFlowHandle,
             withDismissAction = true,
             duration = SnackbarDuration.Indefinite
         )
